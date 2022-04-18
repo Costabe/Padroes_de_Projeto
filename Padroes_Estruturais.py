@@ -64,7 +64,7 @@ def add_car_to_police_database(
     # to the flyweight's methods.
     flyweight.operation([plates, owner])
 
-
+                                 # Solucao do Codigo..
 if __name__ == "__main__":
     """
     The client code usually creates a bunch of pre-populated flyweights in the
