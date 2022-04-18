@@ -67,8 +67,8 @@ def add_car_to_police_database(
                                  # Solucao do Codigo..
 if __name__ == "__main__":
     """
-    The client code usually creates a bunch of pre-populated flyweights in the
-    initialization stage of the application.
+    O código do cliente geralmente cria um monte de pesos-pesados pré-populados no
+    fase de inicialização da aplicação.
     """
 
     factory = FlyweightFactory([
