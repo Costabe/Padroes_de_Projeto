@@ -3,14 +3,11 @@
 import json
 from typing import Dict
 
+# O Flyweight é um padrão de projeto estrutural que permite a você colocar mais objetos na,
+# quantidade de RAM disponível ao compartilhar partes comuns de estado entre os múltiplos objetos,
+# ao invés de manter todos os dados em cada objeto.
 
 class Flyweight():
-    """
-    The Flyweight stores a common portion of the state (also called intrinsic
-    state) that belongs to multiple real business entities. The Flyweight
-    accepts the rest of the state (extrinsic state, unique for each entity) via
-    its method parameters.
-    """
 
     def __init__(self, shared_state: str) -> None:
         self._shared_state = shared_state
@@ -22,12 +19,6 @@ class Flyweight():
 
 
 class FlyweightFactory():
-    """
-    The Flyweight Factory creates and manages the Flyweight objects. It ensures
-    that flyweights are shared correctly. When the client requests a flyweight,
-    the factory either returns an existing instance or creates a new one, if it
-    doesn't exist yet.
-    """
 
     _flyweights: Dict[str, Flyweight] = {}
 
