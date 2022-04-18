@@ -7,8 +7,8 @@ from typing import Any
 
 class Builder(ABC):
     """
-    The Builder interface specifies methods for creating the different parts of
-    the Product objects.
+    A interface Builder especifica métodos para a criação das diferentes partes do
+    os objetos do Produto.
     """
 
     @property
@@ -31,15 +31,15 @@ class Builder(ABC):
 
 class ConcreteBuilder1(Builder):
     """
-    The Concrete Builder classes follow the Builder interface and provide
-    specific implementations of the building steps. Your program may have
-    several variations of Builders, implemented differently.
+    As classes de Construtor de concreto seguem a interface do Construtor e fornecem
+    implementações específicas das etapas de construção. o programa pode ter
+    várias variações de Construtores, implementadas de forma diferente.
     """
 
     def __init__(self) -> None:
         """
-        A fresh builder instance should contain a blank product object, which is
-        used in further assembly.
+        Uma nova instância de construtor deve conter um objeto de produto em branco, que é
+        utilizado na montagem posterior..
         """
         self.reset()
 
@@ -48,20 +48,7 @@ class ConcreteBuilder1(Builder):
 
     @property
     def product(self) -> Product1:
-        """
-        Concrete Builders are supposed to provide their own methods for
-        retrieving results. That's because various types of builders may create
-        entirely different products that don't follow the same interface.
-        Therefore, such methods cannot be declared in the base Builder interface
-        (at least in a statically typed programming language).
-
-        Usually, after returning the end result to the client, a builder
-        instance is expected to be ready to start producing another product.
-        That's why it's a usual practice to call the reset method at the end of
-        the `getProduct` method body. However, this behavior is not mandatory,
-        and you can make your builders wait for an explicit reset call from the
-        client code before disposing of the previous result.
-        """
+        
         product = self._product
         self.reset()
         return product
@@ -77,15 +64,7 @@ class ConcreteBuilder1(Builder):
 
 
 class Product1():
-    """
-    It makes sense to use the Builder pattern only when your products are quite
-    complex and require extensive configuration.
-
-    Unlike in other creational patterns, different concrete builders can produce
-    unrelated products. In other words, results of various builders may not
-    always follow the same interface.
-    """
-
+    
     def __init__(self) -> None:
         self.parts = []
 
@@ -98,10 +77,10 @@ class Product1():
 
 class Director:
     """
-    The Director is only responsible for executing the building steps in a
-    particular sequence. It is helpful when producing products according to a
-    specific order or configuration. Strictly speaking, the Director class is
-    optional, since the client can control builders directly.
+    O Diretor é responsável apenas pela execução das etapas do edifício em um
+    seqüência particular. É útil na produção de produtos de acordo com uma
+    ordem ou configuração específica. Estritamente falando, a classe de Diretores é
+    opcional, uma vez que o cliente pode controlar diretamente os construtores.
     """
 
     def __init__(self) -> None:
@@ -114,15 +93,15 @@ class Director:
     @builder.setter
     def builder(self, builder: Builder) -> None:
         """
-        The Director works with any builder instance that the client code passes
-        to it. This way, the client code may alter the final type of the newly
-        assembled product.
+        O Diretor trabalha com qualquer instância construtora que o código do cliente passe
+        a ela. Desta forma, o código do cliente pode alterar o tipo final do novo
+        produto montado.
         """
         self._builder = builder
 
     """
-    The Director can construct several product variations using the same
-    building steps.
+    O Diretor pode construir várias variações de produtos usando o mesmo
+    etapas de construção.
     """
 
     def build_minimal_viable_product(self) -> None:
@@ -136,9 +115,9 @@ class Director:
 
 if __name__ == "__main__":
     """
-    The client code creates a builder object, passes it to the director and then
-    initiates the construction process. The end result is retrieved from the
-    builder object.
+     O código do cliente cria um objeto de construção, passa-o para o diretor e depois
+    inicia o processo de construção. O resultado final é recuperado do
+    objeto do construtor.
     """
 
     director = Director()
