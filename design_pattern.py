@@ -31,7 +31,7 @@ class Appartement:
     def Socket(self):
         print("All Appartement there are severeal eletrical sockets 🔌")
 
-if __name__ == "__ main __":
+if __name__ == "__main__":
     print("---------- 🏠 HOUSE 🏠 ----------")
     my_house = House()
     my_house.locks()
