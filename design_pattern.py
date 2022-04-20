@@ -1,45 +1,45 @@
 # Classe Base 
 class Imovel:
     def Rooms(self):
-        print("Room division")
+        print("We rolled out the new carpet in the living room.")
 
     def Wall(self):
-        print("Each wall has one object")
+        print("The builders have walled the area around the lot.")
 
 #Classe Filhas 
 
 class House:
-    def locks(self):
-        print("All the doors have Locks")
+    def lock(self):
+        print(" always lock the door when I leave the house.")
 
-    def keys(self):
-        print("All Locks have one Keys 🔑")
+    def key(self):
+        print("How Many Doors Have One Key 🔑")
 
     def Sink(Self):
-        print("All House have one kitchen Sink")
+        print("The ring fell off her finger and sank into the kitchen sink.")
 
     def Douche(self):
-        print("All House have one Douche 🚿")
+        print("How many Douche have One Appartament 🚿")
 
 class Appartement:
-    def Windows(self):
-        print("All Appartment have Windows 🪟")
+    def Window(self):
+        print("The display of prices in the window is correct. 🪟")
 
     def TV(self):
-        print("All Appartment have TV 📺")
+        print("How many features a tv has 📺")
 
     def Socket(self):
-        print("All Appartement there are severeal eletrical sockets 🔌")
+        print("How many there are severeal eletrical sockets One Flat 🔌")
 
 if __name__ == "__main__":
     print("---------- 🏠 HOUSE 🏠 ----------")
     my_house = House()
-    my_house.locks()
-    my_house.keys()
+    my_house.lock()
+    my_house.key()
     my_house.Sink()
     my_house.Douche()
     print("---------- 🏢 Appartement 🏢 ----------")
     my_Appartement = Appartement()
-    my_Appartement.Windows()
+    my_Appartement.Window()
     my_Appartement.TV()
     my_Appartement.Socket()
